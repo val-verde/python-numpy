@@ -82,7 +82,9 @@
 #define NPY_MIN_ELIDE_BYTES (32)
 #endif
 #include <dlfcn.h>
+#if __has_include(<execinfo.h>)
 #include <execinfo.h>
+#endif
 
 /*
  * linear search pointer in table
