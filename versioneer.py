@@ -745,11 +745,16 @@ def render_pep440(pieces):
             if pieces["dirty"]:
                 rendered += ".dirty"
     else:
-        # exception #1
-        rendered = "0+untagged.%%d.g%%s" %% (pieces["distance"],
-                                          pieces["short"])
-        if pieces["dirty"]:
-            rendered += ".dirty"
+        override = os.environ["NUMPY_VERSION"]
+
+        if override != "":
+            rendered = override
+        else:
+            # exception #1
+            rendered = "0+untagged.%%d.g%%s" %% (pieces["distance"],
+                                                pieces["short"])
+            if pieces["dirty"]:
+                rendered += ".dirty"
     return rendered
 
 
@@ -1253,11 +1258,16 @@ def render_pep440(pieces):
             if pieces["dirty"]:
                 rendered += ".dirty"
     else:
-        # exception #1
-        rendered = "0+untagged.%d.g%s" % (pieces["distance"],
-                                          pieces["short"])
-        if pieces["dirty"]:
-            rendered += ".dirty"
+        override = os.environ["NUMPY_VERSION"]
+
+        if override != "":
+            rendered = override
+        else:
+            # exception #1
+            rendered = "0+untagged.%d.g%s" % (pieces["distance"],
+                                              pieces["short"])
+            if pieces["dirty"]:
+                rendered += ".dirty"
     return rendered
 
 
