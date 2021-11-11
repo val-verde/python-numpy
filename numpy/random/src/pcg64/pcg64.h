@@ -52,7 +52,7 @@
 
 #include <inttypes.h>
 
-#ifdef _WIN32
+#ifdef _MSC_VER
 #include <stdlib.h>
 #define inline __forceinline
 #endif
