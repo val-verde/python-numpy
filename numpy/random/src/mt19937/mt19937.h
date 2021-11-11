@@ -2,7 +2,7 @@
 #include <math.h>
 #include <stdint.h>
 
-#ifdef _WIN32
+#ifdef _MSC_VER
 #define inline __forceinline
 #endif
 
