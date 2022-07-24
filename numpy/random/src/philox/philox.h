@@ -44,7 +44,7 @@ static NPY_INLINE uint64_t _umul128(uint64_t a, uint64_t b, uint64_t *high) {
   return a * b;
 }
 #else
-#pragma intrinsic(__emulu)
+#define __emulu(a, b) (a * b)
 static NPY_INLINE uint64_t _umul128(uint64_t a, uint64_t b, uint64_t *high) {
 
   uint64_t a_lo, a_hi, b_lo, b_hi, a_x_b_hi, a_x_b_mid, a_x_b_lo, b_x_a_mid,
